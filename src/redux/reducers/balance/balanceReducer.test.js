@@ -12,6 +12,16 @@ const initialState = {
 
 describe("Reducer - Balance", () => {
 
+    it("returns initialState correctly", () => {
+
+        const action = {
+            type: '_UNDEFINED'
+        };
+
+        expect(balanceReducer(undefined, action)).toEqual(initialState);
+
+    });
+
     it("Sets a balance", () => {
 
         const balance = 10;
