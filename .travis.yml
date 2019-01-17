@@ -1,0 +1,14 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+env:
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: ERN7aVD6wzp/VQYnoyS9cFG/sY1gW7aLIOTeFFN/nxmZY9yFaJjxV8W44YrxYpb1A1YcV3jKwLPB9Mu/YN103PhiUMRnQkur4aFuqyeEcyh75r1yvWPnneHVDw8fAF0VeYhEmhbAfnJAF7LU5X5uOT+tGl1bhU0ImruRjV7ONipGSpEqKk0hOaFppPJC6zfZ9OOxQoskDiEOZJZzGABru/wJJg86+4jJ943DhqF8m9LPZm4+XUxF+Ep26b1lalFCnCzbbWcZLx8sJ94kC9BFoWwIY3OTEvg4F9vRh9gdVFYVbNrmr7aXBYdMXuDbHyq77Zx37bo/pBrm6RWtQ8cXF8ZI2XyFLbBI0hz08MIxUvI/PCF+3rBvLdgMb+5V2+t9PLgTcwN+w+TL6EGj3UVuwaq47TOP20i63Om1boTFBr/XbMDgSSTbtIMqsuqFRK8DrxGcF8xrjsmWV0W0X67AhsGM4EvHPgufYRUYPvmIQ1XBIh4GG89uIJWJ6OLkXbKhWZTG9HLq6wkYcQnhBv5GlE/Y17e06tIFWkECjS6cG98XaWHeuLPYabnaBFkYXdhLt2ek+VWVoEO0C+CfoTWhwnKaH6E3UozC9MK/jQd7WpApysJHKRAtB27UjDCEuge4r9xZtTjuap5Tm7OJMDqFcU2P6wthJJJ4yp75+/JPLTU=
+    strategy:git
+  on:
+    repo: WingChhun/react-lootCheck
