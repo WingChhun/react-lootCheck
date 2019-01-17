@@ -13,4 +13,11 @@ describe(`App Component`, () => {
     expect(app).toMatchSnapshot();
 
   });
+
+  it(`Contains a Wallet Component`, () => {
+
+    expect(app.find(`Connect(Wallet)`).exists()).toBeTruthy();
+
+  })
+
 })

@@ -35,6 +35,10 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "src/components/**/*.{js,jsx}",
+      "!src/coverage",
+      "!src/serviceWorker.js",
+      "!src/index.js",
+      "!src/redux/*.js",
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
@@ -46,5 +50,8 @@
         "statements": -10
       }
     }
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12"
   }
 }

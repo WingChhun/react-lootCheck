@@ -17,7 +17,7 @@ class Wallet extends Component {
         return (
             <div>
 
-                <h3>
+                <h3 className="balance">
                     Wallet Balance: {balance}
                 </h3>
 
