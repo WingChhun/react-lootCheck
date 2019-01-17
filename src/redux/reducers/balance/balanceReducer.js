@@ -6,7 +6,7 @@ const initialState = {
     balance: -1
 }
 
-const balanceReducer = (state = initialState, action) => {
+export default function balanceReducer(state = initialState, action) {
 
     const {type} = action;
 
@@ -24,5 +24,3 @@ const balanceReducer = (state = initialState, action) => {
 
     }
 }
-
-export default balanceReducer;

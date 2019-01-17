@@ -1,6 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import Wallet from "./wallet.view";
+import Wallet from "./wallet.container";
+
+const props = {};
 
 describe(`Component - Wallet`, () => {
     const app = shallow(<Wallet {...props}/>);

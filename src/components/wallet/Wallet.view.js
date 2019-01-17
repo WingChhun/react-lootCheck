@@ -11,11 +11,15 @@ class Wallet extends Component {
 
     render()
     {
+
+        const {balance} = this.props;
+
         return (
             <div>
 
-                <h2>
-                    Wallet Component</h2>
+                <h3>
+                    Wallet Balance: {balance}
+                </h3>
 
             </div>
         )
@@ -23,4 +27,7 @@ class Wallet extends Component {
 
 }
 
+Wallet.propTypes = {
+    balance: PropTypes.number.isRequired
+}
 export default Wallet;
