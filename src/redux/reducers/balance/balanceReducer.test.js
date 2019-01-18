@@ -48,11 +48,16 @@ describe("Reducer - Balance", () => {
 NOTE: This is the cookie balance Reducer
 */
 
-        describe(`Re-initializing w/ cookies`, () => {
+        describe(`Re-initializing w/ localstorage`, () => {
 
-            it(`Reads the balance from cookies`, () => {
+            it(`Reads the balance from local storage`, () => {
 
-                expect(balanceReducer2(undefined, {})).toEqual(balance);
+                //Note: Assume local storage saved a balance of 15
+                const expectedState = {
+                    balance: 15
+                };
+
+                expect(balanceReducer2(expectedState, {})).toEqual(expectedState);
             });
         })
 
