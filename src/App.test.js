@@ -16,7 +16,9 @@ describe(`App Component`, () => {
 
   it(`Contains a Wallet Component`, () => {
 
-    expect(app.find(`Connect(Wallet)`).exists()).toBeTruthy();
+    const expectedWallet = `Connect(Wallet)`;
+
+    expect(app.find(expectedWallet).exists()).toBeTruthy();
 
   })
 

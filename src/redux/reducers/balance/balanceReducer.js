@@ -3,12 +3,12 @@ import * as actions from "../../actions/balance/balance";
 
 const initialState = {
 
-    balance: -1
+    balance: 0
 }
 
 export default function balanceReducer(state = initialState, action) {
 
-    const {type} = action;
+    const {type, payload} = action;
 
     switch (type) {
 
@@ -18,6 +18,18 @@ export default function balanceReducer(state = initialState, action) {
                 ...state,
                 balance: action.balance
             }
+
+        case constants.DEPOSIT:
+            return {
+                ...state,
+                balance: state.balance + payload
+            }
+
+        case constants.WITHDRAW:
+            return {
+                ...state,
+                balance: state.balance - payload
+            };
 
         default:
             return state;
