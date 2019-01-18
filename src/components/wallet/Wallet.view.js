@@ -29,6 +29,23 @@ class Wallet extends Component {
         this.setState({value});
     }
 
+    deposit = () => {
+
+        const value = parseInt(this.state.value, 10);
+
+        this
+            .props
+            .deposit(value);
+    }
+
+    withdraw = () => {
+        const value = parseInt(this.state.value, 10);
+
+        this
+            .props
+            .withdrawBalance(value);
+    }
+
     render()
     {
 
@@ -49,15 +66,9 @@ class Wallet extends Component {
                     className='input-wallet'
                     onChange={(event) => this.handleChange(event)}/>
 
-                <Button
-                    type='submit'
-                    className="btn-deposit"
-                    onClick={deposit(parseInt(value, 10))}>Deposit</Button>
+                <Button className="btn-deposit" onClick={this.deposit}>Deposit</Button>
 
-                <Button
-                    type='submit'
-                    className="btn-withdraw"
-                    onClick={withdrawBalance(parseInt(value, 10))}>Withdraw</Button>
+                <Button className="btn-withdraw" onClick={this.withdraw}>Withdraw</Button>
 
             </div>
         )

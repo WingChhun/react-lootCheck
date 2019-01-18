@@ -6,16 +6,10 @@ import * as actions from "../../redux/actions/balance/balance";
 
 const mapStateToProps = state => ({balance: state.balance.balance});
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-
-    const {setBalance, deposit, withdrawBalance} = actions;
-    const dispatched = bindActionCreators({
-        setBalance,
-        deposit,
-        withdrawBalance
-    }, dispatch)
-
-    return dispatched;
-}
+const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({
+    setBalance: actions.setBalance,
+    deposit: actions.deposit,
+    withdrawBalance: actions.withdrawBalance
+}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletView);
