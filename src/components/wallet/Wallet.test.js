@@ -6,6 +6,9 @@ const props = {
     balance: 10,
     setBalance: jest.fn()
 };
+const initialState = {
+    value: 0
+};
 
 describe(`Component - Wallet`, () => {
     const app = shallow(<Wallet {...props}/>);
@@ -37,11 +40,20 @@ describe(`Component - Wallet`, () => {
             }
         };
 
-        it(`Updates the 'value' in state`, () => {
+        beforeEach(() => {
 
             app
                 .find('.input-wallet')
                 .simulate('change', event);
+        })
+
+        afterEach(() => {
+            app.setState({
+                ...initialState
+            });
+        })
+
+        it(`Updates the 'value' in state`, () => {
 
             expect(app.state().value).toEqual(value);
 
