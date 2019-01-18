@@ -23,4 +23,48 @@ describe(`Component - Wallet`, () => {
 
     })
 
+    it(`Creates an input to deposit into or withdraw from the balance`, () => {
+
+        expect(app.find('.input-wallet').exists()).toBeTruthy();
+
+    });
+
+    describe(`When a user inputs into input-wallet`, () => {
+        const value = `Hello World`;
+        const event = {
+            target: {
+                value
+            }
+        };
+
+        it(`Updates the 'value' in state`, () => {
+
+            app
+                .find('.input-wallet')
+                .simulate('change', event);
+
+            expect(app.state().value).toEqual(value);
+
+        });
+
+    });
+
+    describe(`Functions`, () => {
+
+        it(`handleChange() updates state`, () => {
+            const wrapper = shallow(<Wallet {...props}/>);
+            const event = {
+                target: {
+                    value: 10
+                }
+            };
+            wrapper
+                .instance()
+                .handleChange(event);
+
+            expect(wrapper.state().value).toEqual(event.target.value);
+
+        });
+    });
+
 })

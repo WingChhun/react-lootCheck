@@ -6,7 +6,16 @@ class Wallet extends Component {
     {
         super(props);
 
-        this.state = {}
+        this.state = {
+
+            value: 0
+        };
+    }
+
+    handleChange = (event) => {
+        const value = event.target.value;
+
+        this.setState({value});
     }
 
     render()
@@ -20,6 +29,13 @@ class Wallet extends Component {
                 <h3 className="balance">
                     Wallet Balance: {balance}
                 </h3>
+
+                <br/>
+
+                <input
+                    type='text'
+                    className='input-wallet'
+                    onChange={(event) => this.handleChange(event)}/>
 
             </div>
         )
