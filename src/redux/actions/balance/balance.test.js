@@ -11,7 +11,7 @@ describe("Redux - Action balance", () => {
 
         const expectedAction = {
             type: SET_BALANCE,
-            balance
+            payload: balance
         }
 
         expect(setBalance(balance)).toEqual(expectedAction);
@@ -22,11 +22,10 @@ describe("Redux - Action balance", () => {
         const depositValue = "10";
         const expectedAction = {
             type: DEPOSIT,
-            payload: depositValue
+            payload: parseInt(depositValue, 10)
         };
 
-        expect(deposit(depositValue)).toEqual(expectedAction);
-
+        expect(deposit(depositValue)).toEqual(expectedAction)
     });
 
     it(`Creates an action to withdraw`, () => {
@@ -34,11 +33,10 @@ describe("Redux - Action balance", () => {
         const withdrawAmount = '10';
         const expectedAction = {
             type: constants.WITHDRAW,
-            payload: withdrawAmount
+            payload: parseInt(withdrawAmount, 10)
         }
 
         expect(actions.withdrawBalance(withdrawAmount)).toEqual(expectedAction);
 
     });
-
 });

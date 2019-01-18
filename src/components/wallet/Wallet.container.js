@@ -8,9 +8,11 @@ const mapStateToProps = state => ({balance: state.balance.balance});
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 
-    const {setBalance} = actions;
+    const {setBalance, deposit, withdrawBalance} = actions;
     const dispatched = bindActionCreators({
-        setBalance
+        setBalance,
+        deposit,
+        withdrawBalance
     }, dispatch)
 
     return dispatched;

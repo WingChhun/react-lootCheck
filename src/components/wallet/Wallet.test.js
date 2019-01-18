@@ -4,7 +4,9 @@ import Wallet from "./Wallet.view";
 
 const props = {
     balance: 10,
-    setBalance: jest.fn()
+    setBalance: jest.fn(),
+    deposit: jest.fn(),
+    withdrawBalance: jest.fn()
 };
 const initialState = {
     value: 0
@@ -33,7 +35,7 @@ describe(`Component - Wallet`, () => {
     });
 
     describe(`When a user inputs into input-wallet`, () => {
-        const value = `Hello World`;
+        const value = `25`;
         const event = {
             target: {
                 value
@@ -59,9 +61,30 @@ describe(`Component - Wallet`, () => {
 
         });
 
+        describe(`User wants to make a deposit`, () => {
+
+            //TODO: Assume button exist
+
+            beforeEach(() => {
+                app
+                    .find('.btn-deposit')
+                    .simulate('click');
+            });
+
+            it(`dispatches the 'deposit() it receives from props with local balance`, () => {
+
+                expect(props.deposit).toHaveBeenCalledWith(parseInt(value, 10));
+
+            });
+
+        });
+
     });
 
     describe(`Functions`, () => {
+
+        beforeEach(() => {});
+        afterEach(() => {});
 
         it(`handleChange() updates state`, () => {
             const wrapper = shallow(<Wallet {...props}/>);
