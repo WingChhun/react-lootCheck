@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import WalletContainer from "./components/wallet/Wallet.container";
 import Wallet from './components/wallet/Wallet.view';
+import LootContainer from './components/Loot/Loot.container';
 class App extends Component {
   render() {
     return (
@@ -11,7 +12,7 @@ class App extends Component {
           Loot Check</h2>
 
         <WalletContainer/>
-
+        <LootContainer/>
       </div>
     );
   }
