@@ -8,6 +8,11 @@ function bitcoinReducer(state = initialState, action) {
     const {type, payload} = action;
 
     switch (type) {
+
+        case constants.FETCH_BITCOIN:
+
+            return payload;
+
         default:
             return state;
     }
