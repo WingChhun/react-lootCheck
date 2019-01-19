@@ -12,6 +12,9 @@ class App extends Component {
           Loot Check</h2>
 
         <WalletContainer/>
+
+        <hr/>
+        <br/>
         <LootContainer/>
       </div>
     );
