@@ -22,7 +22,6 @@ class Loot extends Component {
         const {bitcoin, balance} = this.props;
 
         return (Object.keys(bitcoin).length === 0)
-
             ? ''
             : balance / parseInt(bitcoin.bpi.USD.rate.replace(',', ''), 10);
 
