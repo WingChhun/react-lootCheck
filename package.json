@@ -61,5 +61,6 @@
     "gh-pages": "^2.0.1",
     "node-fetch": "^2.3.0",
     "redux-mock-store": "^1.5.3"
-  }
+  },
+  "homepage": "https://github.com/WingChhun/react-lootCheck"
 }
