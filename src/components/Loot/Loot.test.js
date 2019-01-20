@@ -39,9 +39,12 @@ describe(`Component - Loot`, () => {
     });
 
     describe(`When there are valid bitcoin props`, () => {
+
         beforeEach(() => {
-            props = {
-                ...props,
+            const props = {
+                fetchBitcoin: jest.fn(),
+
+                balance: 10,
                 bitcoin: {
                     bpi: {
                         USD: {
@@ -51,15 +54,9 @@ describe(`Component - Loot`, () => {
                 }
             };
 
-            Loot = shallow(<Loot {...props}/>);
-        })
-
-        it(`Displays the correct bitcoin value`, () => {
-
-            expect(Loot.find('h3').text()).toEqual(`Bitcoin Balance: 0.01`);
-
+            Loot = shallow(<LootView {...props}/>);
         });
 
+        it(`Displays the correct bitcoin value`, () => {});
     });
-
 });
